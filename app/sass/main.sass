@@ -643,6 +643,24 @@
 		+r(576)
 			max-width: 100%
 
+.faq
+	@extend .how
+
+	&__container
+		@extend .how__container
+
+	&__wrap
+		max-width: 685px
+
+	&__quest
+		font-size: 20px
+		font-weight: 600
+
+	&__answer
+		color: $gray0
+
+
+
 .footer
 	&__container
 		+between
@@ -988,3 +1006,77 @@
 				max-width: 50%
 
 
+.accordion
+	padding: 20px 10px
+	margin-bottom: 10px
+	border-bottom: 1px solid #F0F0F0
+	
+	&:first-child
+		border-top: 1px solid #F0F0F0
+
+
+	&:last-child
+		margin-bottom: 0
+		border-bottom: none
+
+	&__header
+		+transition
+		display: flex
+		align-items: center
+		gap: 20px
+		cursor: pointer
+		font-weight: 700
+
+		span
+			+transition
+			position: relative
+			width: 32px
+			height: 32px
+			border-radius: 50%
+			border: 1px solid $black
+
+			&::before,
+			&::after
+				+transition
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				background-color: $black
+
+			&::before
+				width: 10px
+				height: 1px
+			
+			&::after
+				height: 10px
+				width: 1px
+
+	&__arrow
+		+transition
+
+	&__content
+		+transition
+		overflow: hidden
+		color: #b5acac
+		padding-left: 30px
+		height: 0
+
+		// +r(1200)
+		// 	padding-left: 20px
+
+		// +r(767)
+		// 	padding-left: 10px
+
+	&--active
+
+		.accordion
+			&__header
+				margin-bottom: 20px
+
+			&__arrow
+				transform: rotate(180deg)
+
+			&__content
+				opacity: 1
