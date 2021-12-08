@@ -233,6 +233,12 @@
 		+r(767)
 			width: 100%
 
+		&--footer
+			margin-bottom: 20px
+			
+			+r(767)
+				display: none
+
 		&_title
 			display: none
 			margin-bottom: 12px
@@ -313,6 +319,10 @@
 
 				&:hover
 					background: $gray3
+			
+			&--footer
+				top: -210px
+				bottom: 100%
 
 	&__btns
 		display: flex
@@ -662,9 +672,25 @@
 
 
 .footer
-	&__container
-		+between
+	padding: 60px 0
+	background: #f8f8f8
 
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__logo
+		margin-bottom: 20px
+
+	&__info
+		text-align: center
+		font-size: 14px
+		line-height: 20px
+		margin-bottom: 40px
+
+	&__copyright
+		color: $gray1
 
 // -----MODAL-----
 .modal
