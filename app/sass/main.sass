@@ -3,7 +3,7 @@
 // -----CONTAINER-----
 .container
 	width: 100%
-	max-width: 1200px
+	max-width: 1320px
 	padding: 0 15px
 	margin: 0 auto
 
@@ -25,38 +25,49 @@
 	display: flex
 	justify-content: center
 	align-items: center
-	height: 45px
-	border-radius: 20px
+	height: 55px
+	border-radius: 12px
 	max-width: fit-content
-	border: 1px solid $dark
-	background-color: $dark
+	border: 1px solid $accent
+	background-color: $accent
 	padding: 0 15px
 	font-size: 16px
 	color: #fff
-	font-weight: 600
 
 	&:hover
-		border: 1px solid $accent
-		background: $accent
+		border: 1px solid $hover
+		background: $hover
 		color: #fff
 
 	&:active
-		border: 1px solid #fff
-		background: $accent
+		border: 1px solid #C6645F
+		background: #C6645F
 		color: #fff
+
+	&:disabled
+		background: $accent
+		opacity: 0.5
 
 // -----HAMBURGER-----
 .hamburger
 	position: relative
-	display: flex
 	padding: 0
 	border: none
 	background-color: transparent
 	transition: all .3s
-	width: 25px
-	height: 18px
-	margin-right: 15px
+	width: 50px
+	height: 50px
+	// margin-right: 15px
+	padding: 15px
+	background: rgba(224, 115, 110, 0.2)
+	border-radius: 12px
 	outline: none
+	display: none
+
+	+r(767)
+		display: flex
+		align-items: center
+		justify-content: center
 
 	&:hover
 		span
@@ -68,12 +79,12 @@
 
 	&__item
 		position: absolute
-		right: 0
+		// right: 0
 		top: 50%
 		// transform: translate(0, -50%)
-		width: 12px
+		width: 20px
 		height: 2px
-		background-color: $text
+		background-color: $accent
 		border-radius: 4px
 		+transition
 		bottom: 0
@@ -84,20 +95,20 @@
 			display: block
 			position: absolute
 			right: 0
-			background-color: $text
+			background-color: $accent
 			height: 2px
+			width: 20px
 			+transition
 
 		&::before
 			top: 7px
-			width: 18px
 
 		&::after
 			top: -7px
-			width: 25px
 
 	&--active
 		z-index: 100
+		background: $gray3
 
 		&:hover
 			span
@@ -109,17 +120,20 @@
 
 		.hamburger__item
 			background-color: transparent
+			width: 16px
+
 
 			&::before
 				top: 0
-				width: 25px
+				width: 16px
 				transform: rotate(45deg)
+				background: $gray0
 
 			&::after
 				top: 0
-				width: 25px
+				width: 16px
 				transform: rotate(-45deg)
-
+				background: $gray0
 
 .header
 	position: fixed
@@ -127,28 +141,186 @@
 	right: 0
 	left: 0
 	padding: 20px 0
+	height: 80px
+	+transition
+
+	&--active
+		background: #fff
 
 	&__container
 		+between
 
 	&__logo
 		display: block
-		width: 100px
-		height: 50px
+		width: 170px
+
+		+r(767)
+			display: none
 
 		img
 			width: 100%
 			height: auto
 
 
-.section
-	padding: 150px 0
+		&--mobile
+			display: none
 
-	&__container
+			+r(767)
+				display: block
+
+	&__content
 		display: flex
-		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		+transition
+
+
+		+r(767)
+			position: absolute
+			top: 0
+			left: -100%
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: flex-start
+			gap: 140px
+			padding: 50px
+			height: 100vh
+			background: #fff
+			overflow: auto
+			margin-top: 80px
+
+		+r(480)
+			padding-left: 15px
+			padding-right: 15px
+
+		&--active
+			left: 0
+
+	&__block
+		display: flex
+		align-items: center
 		gap: 15px
 
+		+r(767)
+			width: 100%
+
+	&__lang
+		position: relative
+
+		+r(767)
+			width: 100%
+
+		&_title
+			display: none
+			margin-bottom: 12px
+
+			+r(767)
+				display: block
+
+		&_item
+			display: flex
+			align-items: center
+			justify-content: space-between
+			background: #fff
+			border-radius: 100px
+			padding: 5px 15px 5px 5px
+			width: 161px
+			border: 1px solid transparent
+			+transition
+
+			+r(767)
+				height: 58px
+				width: 100%
+				border: 1px solid $gray0
+
+		&_country
+			display: flex
+			align-items: center
+			gap: 10px
+
+		&_arrow
+			+transition
+
+		&:hover
+			cursor: pointer
+
+			.header__lang_item
+				border-color: $gray0
+				
+			.header__lang_arrow
+				transform: rotate(180deg)
+
+			.header__lang_submenu
+				visibility: visible
+				opacity: 1
+
+		&_flag
+			width: 28px
+			height: 28px
+			border-radius: 100%
+			overflow: hidden
+
+			img
+				object-fit: cover
+				width: 100%
+				height: 100%
+
+		&_submenu
+			background: #fff
+			border-radius: 12px
+			padding: 12px 4px
+			position: absolute
+			min-width: 161px
+			top: 115%
+			left: 0
+			visibility: hidden
+			opacity: 0
+			+transition
+
+			+r(767)
+				width: 100%
+
+			a
+				display: flex
+				align-items: center
+				gap: 10px
+				padding: 4px
+				color: $gray0
+				border-radius: 12px
+
+				&:hover
+					background: $gray3
+
+	&__btns
+		display: flex
+		align-items: center
+		gap: 10px
+
+		+r(767)
+			flex-direction: column
+			width: 100%
+
+	&__btn
+		font-weight: 600
+		height: 42px
+
+		+r(767)
+			max-width: 100%
+			width: 100%
+			height: 52px
+
+		&--login
+			border: 2px solid $gray0
+			background: #fff
+			color: $gray0
+			+transition
+
+			&:hover
+				color: $gray0
+				border: 2px solid $gray1
+				background: #fff
 
 .footer
 	&__container
@@ -298,7 +470,7 @@
 			font-size: 16px
 
 		&:focus
-			box-shadow: 0 0 4px 0 rgba($text, 1)
+			box-shadow: 0 0 4px 0 rgba($gray0, 1)
 
 		&._error
 			box-shadow: 0 0 4px 0 rgba(red, 1)
@@ -426,7 +598,7 @@
 				+transition
 
 			a
-				color: $text
+				color: $gray0
 
 		&_input
 			display: none

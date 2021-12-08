@@ -4,11 +4,10 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Start Optimazed</title>
-	<meta name="description" content="Startup HTML Optimized">
+	<title>Cashsend</title>
+	<meta name="description" content="Cashsend">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.ico">
-	<meta property="og:image" content="img/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
 	<script src="js/app.min.js" defer></script>
 
@@ -19,32 +18,87 @@
 	<header class="header">
 		<div class="header__container container">
 
-			<a href="/" class="header__logo">
-				
-			</a>
-
-			<nav class="header__nav">
-				<ul>
-					<li><a href="#about">О компании</a></li>
-				</ul>
-			</nav>
+			<div class="header__content">
+				<div class="header__block">
+					<a href="/" class="header__logo">
+						<img src="img/logo.svg" alt="">
+					</a>
+	
+					<div class="header__lang">
+						<p class="header__lang_title">Выберите страну</p>
+						<div class="header__lang_item">
+							<div class="header__lang_country">
+								<div class="header__lang_flag">
+									<img src="img/kz.jpg" alt="">
+								</div>
+								<p>Казахстан</p>
+							</div>
+							<img class="header__lang_arrow" src="img/arrow.svg" alt="">
+						</div>
+						<ul class="header__lang_submenu">
+							<li>
+								<a href="#">
+									<div class="header__lang_country">
+										<div class="header__lang_flag">
+											<img src="img/kz.jpg" alt="">
+										</div>
+										<p>Казахстан</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="header__lang_country">
+										<div class="header__lang_flag">
+											<img src="img/kz.jpg" alt="">
+										</div>
+										<p>Казахстан</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="header__lang_country">
+										<div class="header__lang_flag">
+											<img src="img/kz.jpg" alt="">
+										</div>
+										<p>Казахстан</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="header__lang_country">
+										<div class="header__lang_flag">
+											<img src="img/kz.jpg" alt="">
+										</div>
+										<p>Казахстан</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+	
+				<div class="header__btns">
+					<a href="#" class="header__btn header__btn--login btn">Войти</a>
+					<a href="#" class="header__btn btn">Зарегистрироваться</a>
+				</div>
+			</div>
 
 			<button class="hamburger" type="button">
 				<span class="hamburger__item"></span>
 			</button>
 
+			<a href="/" class="header__logo header__logo--mobile">
+				<img src="img/logo.svg" alt="">
+			</a>
+
+
+
 		</div>
 	</header>
 
-	<section class="section">
-		<div class="container section__container">
-
-			<a href="#" class="btn modal__edits">Добавить</a>
-			<a href="#" class="btn modal__add">Редактировать</a>
-			<a href="#" class="btn modal__thanks">Благодарность</a>
-
-		</div>
-	</section>
 
 	<footer class="footer">
 		<div class="footer__container container"></div>

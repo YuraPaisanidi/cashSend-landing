@@ -1,13 +1,17 @@
 
 //----------------------fonts---------------------
-$fonts: 'Roboto', sans-serif
+$fonts: 'Noto Sans', sans-serif
 //---------------------end-fonts---------------------
 
 //----------------------color---------------------
-$accent: #4cddee
-$text: #353535
-$dark: #1e53a6
-$title: #f43ddb
+$accent: #E0736E
+$gray0: #373743
+$gray1: #9B9BAB
+$gray2: #EAECEF
+$gray3: #F8F9FA
+$green: #60BC51
+$red: #E63232
+$hover: #FF8B85
 //---------------------end-color---------------------
 
 body
@@ -15,14 +19,15 @@ body
 	position: relative
 	min-width: 320px
 	font-family: $fonts
-	font-size: 14px
-	color: $text
+	font-size: 16px
+	color: $gray0
 	line-height: 1.4
 	font-weight: 400
 	min-height: 100vh
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	background: #FFF7F7
 
 ::selection
 	background-color: $accent
@@ -80,4 +85,4 @@ input, textarea, select
 		-webkit-appearance: none
 
 	&::placeholder
-		color: $text
+		color: $gray0

@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 	
 		};
-		// headerFixed('.header', '.header--active');
+		headerFixed('.header', '.header--active');
 	
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
@@ -92,12 +92,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 			button.addEventListener('click', (e) => {
 				button.classList.toggle('hamburger--active');
-				nav.classList.toggle('header__nav--active');
+				nav.classList.toggle('header__content--active');
 				header.classList.toggle('header--menu');
+				header.classList.toggle('header--active');
 			});
 	
 		};
-		// hamburger('.hamburger', '.header__nav', '.header');
+		hamburger('.hamburger', '.header__content', '.header');
 		
 	//----------------------MODAL-----------------------
 		const modals = (modalSelector) => {
