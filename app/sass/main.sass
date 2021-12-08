@@ -19,6 +19,14 @@
 	+r(576)
 		max-width: 480px
 
+.h1
+	font-size: 40px
+	font-weight: 700
+	line-height: 55px
+
+	+r(360)
+		font-size: 36px
+
 // -----BUTTON-----
 .btn
 	position: relative
@@ -142,6 +150,8 @@
 	left: 0
 	padding: 20px 0
 	height: 80px
+	background: #FFF7F7
+	z-index: 1000
 	+transition
 
 	&--active
@@ -313,14 +323,95 @@
 
 		&--login
 			border: 2px solid $gray0
-			background: #fff
+			background: transparent
 			color: $gray0
 			+transition
 
 			&:hover
 				color: $gray0
 				border: 2px solid $gray1
-				background: #fff
+				background: transparent
+
+.main
+	margin-top: 80px
+
+.hero
+	padding-top: 40px
+	padding-bottom: 100px
+	background: #FFF7F7
+
+	&__container
+		display: flex
+		gap: 40px
+		align-items: flex-end
+
+		+r(992)
+			flex-direction: column
+			align-items: center
+
+	&__left
+		display: flex
+		flex-direction: column
+		gap: 40px
+		width: 50%
+
+		+r(992)
+			width: 100%
+
+	&__adv
+
+		&_item
+			font-size: 20px
+
+	&__payment
+		display: flex
+		align-items: center
+		gap: 40px
+
+		+r(360)
+			gap: 20px
+
+	&__btn
+		background: $gray0
+		font-weight: 600
+		height: 54px
+		max-width: 263px
+		width: 100%
+		margin-bottom: 10px
+		border-color: transparent
+
+		+r(480)
+			width: 100%
+			max-width: 100%
+
+		&_block
+
+			span
+				font-size: 14px
+
+	&__right
+		display: flex
+		flex-direction: column
+		gap: 30px
+		width: 50%
+
+		+r(992)
+			// max-width: 100%
+			width: 100%
+
+		&_block
+			display: flex
+			align-items: center
+			gap: 25px
+
+			+r(767)
+				gap: 15px
+
+		&_img
+
+			img
+				object-fit: cover
+				width: 100%
 
 .footer
 	&__container
