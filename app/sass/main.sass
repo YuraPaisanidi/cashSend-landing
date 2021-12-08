@@ -533,6 +533,51 @@
 		font-weight: 600
 		text-align: center
 
+.why
+	@extend .how
+
+	&__container
+		@extend .how__container
+
+	&__wrap
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		gap: 30px
+		max-width: 853px
+
+		+r(767)
+			grid-template-columns: 1fr
+
+		+r(480)
+			padding: 0 40px
+
+	&__item
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__img
+		width: 80px
+		height: 80px
+		border-radius: 100%
+		overflow: hidden
+		margin-bottom: 20px
+
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+
+	&__name
+		font-size: 18px
+		font-weight: 600
+		margin-bottom: 10px
+		text-align: center
+
+	&__desc
+		text-align: center
+
+
 .footer
 	&__container
 		+between
