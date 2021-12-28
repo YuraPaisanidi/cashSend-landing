@@ -205,7 +205,7 @@
 			flex-direction: column
 			align-items: center
 			justify-content: flex-start
-			gap: 140px
+			// gap: 140px
 			padding: 50px
 			height: 100vh
 			background: #fff
@@ -226,6 +226,7 @@
 
 		+r(767)
 			width: 100%
+			margin-bottom: 140px
 
 	&__lang
 		position: relative
@@ -308,6 +309,7 @@
 
 			+r(767)
 				width: 100%
+				z-index: 10
 
 			a
 				display: flex
@@ -370,30 +372,56 @@
 		align-items: flex-end
 
 		+r(992)
-			flex-direction: column
+			flex-direction: column-reverse
 			align-items: center
 
 	&__left
 		display: flex
 		flex-direction: column
-		gap: 40px
+		// gap: 40px
 		width: 50%
 
 		+r(992)
 			width: 100%
 
+	&__title
+		margin-bottom: 40px
+
+		+r(480)
+			margin-bottom: 30px
+
 	&__adv
+		margin-bottom: 40px
+
+		+r(480)
+			margin-bottom: 30px
 
 		&_item
 			font-size: 20px
 
+			+r(480)
+				font-size: 18px
+
 	&__payment
 		display: flex
 		align-items: center
-		gap: 40px
+		// gap: 40px
+		margin-bottom: 40px
+
+		+r(480)
+			margin-bottom: 30px
 
 		+r(360)
 			gap: 20px
+
+		&_item
+			margin-right: 40px
+
+			+r(360)
+				margin-right: 10px
+
+			&:last-child
+				margin-right: 0
 
 	&__btn
 		background: $gray0
@@ -421,7 +449,6 @@
 	&__right
 		display: flex
 		flex-direction: column
-		gap: 30px
 		width: 50%
 
 		+r(992)
@@ -430,23 +457,44 @@
 		&_block
 			display: flex
 			align-items: center
-			gap: 25px
+			margin-bottom: 30px
 
 			+r(992)
 				justify-content: center
 
 			+r(767)
-				gap: 15px
+				// gap: 15px
 				justify-content: flex-start
 
+			&:last-child
+				margin-bottom: 0
+
 		&_img
+			max-width: 135px
+			border-radius: 10px
+			overflow: hidden
+			margin-right: 25px
+
+			+r(767)
+				margin-right: 15px
+
+			&:last-child
+				margin-right: 0
+
+			&--phone
+				max-width: 144px
+
+			&--table
+				max-width: 403px
 
 			img
-				object-fit: cover
+				object-fit: scale-down
 				width: 100%
+				height: 100%
 
 .how
 	padding: 120px 0
+	text-align: center
 
 	+r(992)
 		padding: 80px 0
@@ -455,12 +503,13 @@
 		display: flex
 		flex-direction: column
 		align-items: center
-		gap: 60px
+		// gap: 60px
 
 	&__wrap
 		display: grid
 		grid-template-columns: 1fr 1fr 1fr 1fr
 		gap: 30px
+		margin-bottom: 60px
 
 		+r(992)
 			grid-template-columns: 1fr 1fr
@@ -569,6 +618,9 @@
 		+r(480)
 			padding: 0 40px
 
+	&__title
+		text-align: center
+
 	&__item
 		display: flex
 		flex-direction: column
@@ -665,12 +717,16 @@
 	&__wrap
 		max-width: 685px
 
+	&__title
+		text-align: center
+
 	&__quest
 		font-size: 20px
 		font-weight: 600
 
 	&__answer
 		color: $gray0
+		text-align: left
 
 .footer
 	padding: 60px 0
@@ -692,6 +748,10 @@
 
 	&__copyright
 		color: $gray1
+		text-align: center
+
+		+r(480)
+			font-size: 14px
 
 .accordion
 	padding: 20px 10px
